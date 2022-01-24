@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace News
+namespace News.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class AboutView : ContentPage
     {
-        public MainPage()
+        public AboutView()
         {
             InitializeComponent();
         }

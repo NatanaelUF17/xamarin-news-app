@@ -14,14 +14,18 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
+    <PackageReference Include="Autofac" Version="6.3.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ViewModels\" />
     <None Remove="ViewModels\Helpers\" />
     <None Remove="PropertyChanged.Fody" />
+    <None Remove="Views\" />
+    <None Remove="Autofac" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\Helpers\" />
+    <Folder Include="Views\" />
   </ItemGroup>
 </Project>
