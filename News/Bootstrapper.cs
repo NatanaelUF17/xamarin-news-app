@@ -9,6 +9,7 @@ namespace News
         public static void Initialize()
         {
             var containerBuilder = new ContainerBuilder();
+            containerBuilder.RegisterType<MainShell>();
             containerBuilder.RegisterAssemblyTypes(typeof(App).Assembly)
                 .Where(x => x.IsSubclassOf(typeof(ViewModel)));
 
