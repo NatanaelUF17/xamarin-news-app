@@ -2,19 +2,39 @@
 <Shell
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:News.Views"
+    xmlns:views="clr-namespace:News.Views"
     x:Class="News.MainShell">
 
     <FlyoutItem Title="Home"
                 Icon="{StaticResource HomeIcon}">
         <ShellContent Title="Headlines"
-                      Icon="{StaticResource HeadlinesIcon}">
-            <ContentPage Title="Headlines" />
-        </ShellContent>
+                      Icon="{StaticResource HeadlinesIcon}"
+                      ContentTemplate="{DataTemplate views:HeadlinesView}" />
 
-        <Tab Title="News" Icon="{StaticResource NewsIcon}">
-            <ContentPage Title="Local" />
-            <ContentPage Title="Global" />
+        <Tab Title="News" Route="news" Icon="{StaticResource NewsIcon}">
+            <ShellContent Title="Local" Route="local">
+                <ShellContent.ContentTemplate>
+                    <DataTemplate>
+                        <views:HeadlinesView>
+                            <x:Arguments>
+                                <x:String>Local</x:String>
+                            </x:Arguments>
+                        </views:HeadlinesView>
+                    </DataTemplate>
+                </ShellContent.ContentTemplate>
+            </ShellContent>
+
+            <ShellContent Title="Global" Route="global">
+                <ShellContent.ContentTemplate>
+                    <DataTemplate>
+                        <views:HeadlinesView>
+                            <x:Arguments>
+                                <x:String>Global</x:String>
+                            </x:Arguments>
+                        </views:HeadlinesView>
+                    </DataTemplate>
+                </ShellContent.ContentTemplate>
+            </ShellContent>
         </Tab>
     </FlyoutItem>
 
