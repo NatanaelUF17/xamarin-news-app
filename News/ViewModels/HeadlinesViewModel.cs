@@ -21,10 +21,12 @@ namespace News.ViewModels
             _newsService = newsService;
         }
 
-        public ICommand NewSelected => new Command(async (selectedNew) =>
+        public ICommand NewSelected => new Command(async (newSelected) =>
         {
-            var selectedArticle = selectedNew as Article;
+            Console.WriteLine($"you tapped on {newSelected}");
+            var selectedArticle = newSelected as Article;
             var url = HttpUtility.UrlEncode(selectedArticle.Url);
+            await Navigation.NavigateTo($"articleview?url={url}");
         });
 
         public async Task Initialize(string scope)

@@ -19,7 +19,7 @@
                     <DataTemplate>
                         <ContentView>
                             <ContentView.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding BindingConext.NewSelected,
+                                <TapGestureRecognizer Command="{Binding BindingContext.NewSelected,
                                                       Source={x:Reference headlinesview}}"
                                                       CommandParameter="{Binding .}"/>
                             </ContentView.GestureRecognizers>
